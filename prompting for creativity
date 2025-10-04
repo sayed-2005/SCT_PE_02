@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class CreativePrompting {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== Prompting for Creativity (Java Simulation) ===");
+        System.out.print("Enter your prompt (e.g., 'startup idea', 'story snippet', 'inspirational quote'): ");
+        String userPrompt = sc.nextLine();
+
+        // Few-shot examples (like how ChatGPT uses examples to guide style)
+        List<String> fewShotExamples = Arrays.asList(
+            "Prompt: startup idea → Output: A futuristic app that plants a tree for every online purchase.",
+            "Prompt: story snippet → Output: On a rainy night, the old typewriter wrote a love letter by itself.",
+            "Prompt: inspirational quote → Output: 'Every sunrise is a new invitation to rise higher.'"
+        );
+
+        System.out.println("\n--- Few-Shot Examples ---");
+        for (String example : fewShotExamples) {
+            System.out.println(example);
+        }
+
+        // Now generate outputs for the user’s prompt
+        System.out.println("\n--- Generated Creative Variations for: " + userPrompt + " ---");
+        generateCreativeOutputs(userPrompt);
+
+        sc.close();
+    }
+
+    public static void generateCreativeOutputs(String prompt) {
+        Random rand = new Random();
+
+        String[] tones = {"Professional", "Casual", "Inspirational", "Funny", "Futuristic"};
+        String[] templates = {
+            "A %s approach to %s could be: '%s that changes lives.'",
+            "Here’s a %s spin on %s: Imagine '%s making the world better.'",
+            "Thinking in a %s way about %s: What if '%s became reality?'",
+            "A %s twist on %s: Picture '%s transforming everyday life.'"
+        };
+
+        for (int i = 0; i < 3; i++) {
+            String tone = tones[rand.nextInt(tones.length)];
+            String template = templates[rand.nextInt(templates.length)];
+            String creativeOutput = String.format(template, tone, prompt, prompt);
+            System.out.println((i + 1) + ". " + creativeOutput);
+        }
+    }
+}
