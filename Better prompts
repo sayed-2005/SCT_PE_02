@@ -1,0 +1,30 @@
+// Task 01 - Writing Better Prompts
+// Demonstrating vague vs improved prompts in Java
+
+public class WritingBetterPrompts {
+    public static void main(String[] args) {
+        
+        // 3 vague prompts
+        String[] vaguePrompts = {
+            "Explain climate change",
+            "Teach me math",
+            "Tell me about history"
+        };
+
+        // Improved prompts
+        String[] improvedPrompts = {
+            "Explain climate change in 3 bullet points suitable for a 12-year-old student.",
+            "Teach me how to solve quadratic equations step by step with an example.",
+            "Summarize World War II in 5 key events in simple language."
+        };
+
+        // Display comparison
+        System.out.println("=== Vague vs Improved Prompts ===\n");
+
+        for (int i = 0; i < vaguePrompts.length; i++) {
+            System.out.println("Vague Prompt   : " + vaguePrompts[i]);
+            System.out.println("Improved Prompt: " + improvedPrompts[i]);
+            System.out.println("------------------------------------------");
+        }
+    }
+}
