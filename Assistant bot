@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class AssistantBot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("🤖 Hello! I am your Interview Assistant.");
+        System.out.println("Let's start with some questions.");
+
+        // Step 1: Ask for name
+        System.out.print("1) Can you tell me your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Nice to meet you, " + name + "!");
+
+        // Step 2: Ask about skills
+        System.out.print("2) What is your strongest programming skill? ");
+        String skill = scanner.nextLine();
+        System.out.println("Great! " + skill + " is a valuable skill.");
+
+        // Step 3: Ask about experience
+        System.out.print("3) How many years of experience do you have? ");
+        String experience = scanner.nextLine();
+        System.out.println("Thanks, " + name + ". " + experience + " years of experience is impressive!");
+
+        // Step 4: Ask about future goals
+        System.out.print("4) Where do you see yourself in 5 years? ");
+        String goals = scanner.nextLine();
+        System.out.println("Ambitious! I like your vision: " + goals);
+
+        // Closing
+        System.out.println("✅ Thank you, " + name + "! That concludes our interview simulation.");
+        System.out.println("Have a great day!");
+    }
+}
